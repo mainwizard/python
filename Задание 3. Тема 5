@@ -1,0 +1,13 @@
+# 3. Создать текстовый файл (не программно), построчно записать фамилии сотрудников и величину их окладов.
+# Определить, кто из сотрудников имеет оклад менее 20 тыс., вывести фамилии этих сотрудников. Выполнить
+# подсчет средней величины дохода сотрудников.
+with open('text.txt') as f:
+    wrk_slr = list()
+    lines = f.readlines()
+    for line in lines:
+        surname, sal = line.split(' - ')
+        wrk_slr.append(int(sal))
+        if int(sal) < 20000:
+            print('Сотрудники с окладом меньше 20 тыс. руб: %s'%(surname), end='\n')
+    average_sal = sum(wrk_slr) / len(wrk_slr)
+    print('Средняя зп: %d руб.'%(average_sal))
