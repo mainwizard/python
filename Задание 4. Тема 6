@@ -1,0 +1,89 @@
+# Для классов TownCar и WorkCar переопределите метод show_speed. При значении скорости свыше 60 (TownCar) и
+# 40 (WorkCar) должно выводиться сообщение о превышении скорости.
+# Создайте экземпляры классов, передайте значения атрибутов. Выполните доступ к атрибутам, выведите результат.
+# Выполните вызов методов и также покажите результат.
+class Car:
+    speed = 80
+    color = 'Зеленый'
+    name = 'KIA'
+    is_police = False
+    if is_police == True:
+        print('Внимание уступите дорогу!Полицейская машина!Виу-Виу-Виу!')
+
+    def show_speed(self):
+        print('Скорость автомобиля составляет', self.speed, 'км/ч')
+
+    def go(self):
+        print('Машина поехала!')
+
+    def stop(self):
+        print('Машина остановилась!')
+
+    def turn_left(self):
+        print('Машина поворачивает налево!')
+
+    def turn_right(self):
+        print('Машина поворачивает направо!')
+#
+class TownCar(Car):
+    name = 'Nissan'
+    speed = 90
+    color = 'Белый'
+    is_police = False
+    def show_speed(self):
+        if self.speed > 60:
+            print('Превышение скорости!')
+        else:
+            print('Скорость автомобиля составляет', self.speed, 'км/ч')
+#
+class SportCar(Car):
+    name = 'Ferrari'
+    color = 'Красный'
+    speed = 360
+    is_police = False
+
+class WorkCar(Car):
+    speed = 40
+    name = 'Зорька'
+    color = 'Синий'
+    is_police = False
+
+    def show_speed(self):
+        if self.speed > 60:
+            print('Превышение скорости!')
+        else:
+            print('Скорость автомобиля составляет', self.speed, 'км/ч')
+
+class PoliceCar(Car):
+    name = 'AUDI'
+    speed = 90
+    color = 'Черно-белая'
+    is_police = True
+
+auto_1 = TownCar()
+auto_1.speed = 60
+auto_1.go()
+auto_1.show_speed()
+auto_1.stop()
+auto_1.turn_left()
+auto_1.turn_right()
+
+auto_2 = WorkCar()
+auto_2.speed = 60
+print(auto_2.is_police)
+auto_2.go()
+auto_2.show_speed()
+auto_2.stop()
+auto_2.turn_left()
+auto_2.turn_right()
+
+auto_3 = PoliceCar()
+print(auto_3.name)
+print(auto_3.color)
+print(auto_3.is_police)
+auto_3.speed = 90
+auto_3.go()
+auto_3.show_speed()
+auto_3.stop()
+auto_3.turn_left()
+auto_3.turn_right()
